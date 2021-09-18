@@ -6,7 +6,7 @@ services:
     restart: always
 
   phpmyadmin:
-    image: phpmyadmin
+    image: phpmyadmin/phpmyadmin
     restart: always
     ports:
       - 8081:80
