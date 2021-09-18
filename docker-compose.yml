@@ -12,7 +12,7 @@ services:
       
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: Studart-database
+    container_name: Studart-db-admin
     links:
       - db
     restart: always
@@ -21,6 +21,7 @@ services:
    
   backend:
     build: ../back-end/
+    container_name: Studart-backend
     ports:
       - "3000:3000"
     networks:
