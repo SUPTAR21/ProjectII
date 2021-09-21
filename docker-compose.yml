@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    build: .
+    image: ghcr.io/suptar21/projectii-database:master
     container_name: Studart-database
     networks:
       - studart-network
@@ -18,16 +18,9 @@ services:
     restart: always
     ports:
       - 8081:80
-   
-  backend:
-    build: ../back-end/
-    container_name: Studart-backend
-    ports:
-      - "3000:3000"
-    networks:
-      - studart-network
-    depends_on:
-      - db
       
 networks:
-  studart-network: 
+  default:
+    external:
+      name:  studart-database-network
+ 
