@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    build: .
+    image: ghcr.io/suptar21/projectii-database:master
     container_name: Studart-database
     networks:
       - studart-network
