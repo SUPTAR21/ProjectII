@@ -20,8 +20,5 @@ services:
       - database
     ports:
       - 8081:80
-      
-networks:
-  default:
-    name: studart-database-network
+
  
