@@ -25,5 +25,4 @@ services:
       
 networks:
   default:
-    external:
-      name: database_myproduct-network
+    name: database_myproduct-network
