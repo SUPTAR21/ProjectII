@@ -22,5 +22,5 @@ services:
 networks:
   default:
     external:
-      name:  studart-database-network
+      name: studart-database-network
  
