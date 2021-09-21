@@ -3,7 +3,7 @@ version: '3'
 services:
   database:
     image: ghcr.io/suptar21/projectii-database:master
-    container_name: database
+    container_name: studart-database
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     env_file:
