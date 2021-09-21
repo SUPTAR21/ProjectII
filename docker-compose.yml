@@ -10,9 +10,6 @@ services:
       - ./.env
     ports:
       - "3306:3306"
-    volumes:
-      - ./data-sys:/var/lib/mysql
-      - ./conf-sys/my.cnf:/etc/my.cnf
       
   database-admin:
     image: phpmyadmin/phpmyadmin
