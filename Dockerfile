@@ -1,3 +1,3 @@
-FROM mysql:5.7
+FROM mysql
 COPY ./Script ./script
 EXPOSE 3306:3306 
