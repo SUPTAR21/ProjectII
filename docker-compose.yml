@@ -15,7 +15,6 @@ services:
   database-admin:
     image: phpmyadmin/phpmyadmin
     container_name: studart-database-admin
-    restart: always
     links:
       - database
     environment:
