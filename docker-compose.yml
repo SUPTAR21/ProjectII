@@ -25,8 +25,7 @@ services:
     restart: always
     ports:
       - 8081:80
-      
- networks:
+
+networks:
   default:
     name: studart-database-network
-
