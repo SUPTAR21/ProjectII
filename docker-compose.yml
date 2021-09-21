@@ -2,7 +2,7 @@ version: '3'
 services:
   database:
     image: ghcr.io/suptar21/projectii-database:master
-    container_name: studart-database
+    container_name: database
     restart: always
     volumes:
       - ./data-sys:/var/lib/mysql
@@ -18,7 +18,7 @@ services:
     links:
       - database
     environment:
-      PMA_HOST: studart-database
+      PMA_HOST: database
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
     restart: always
