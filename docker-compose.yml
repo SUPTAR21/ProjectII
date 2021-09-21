@@ -17,5 +17,5 @@ services:
       
 networks:
   default:
-      name: studart-database-network
+    name: studart-database-network
  
