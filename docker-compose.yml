@@ -17,7 +17,7 @@ services:
     container_name: studart-database-admin
     restart: always
     links:
-      - database
+      - studart-database
     ports:
       - 8081:80
       
