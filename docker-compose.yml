@@ -1,7 +1,7 @@
 version: '3'
 services:
   database:
-    image: ghcr.io/suptar21/projectii-database:master
+    image: mysql:5.7
     container_name: studart-database
     environment:
       MYSQL_ROOT_PASSWORD: Studart222
