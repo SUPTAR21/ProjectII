@@ -9,6 +9,10 @@ services:
     volumes:
       - ./data-sys:/var/lib/mysql
       - ./conf-sys/my.cnf:/etc/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    env_file:
+      - ./.env
       
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
