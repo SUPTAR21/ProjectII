@@ -3,7 +3,6 @@ services:
   database:
     image: ghcr.io/suptar21/projectii-database:master
     container_name: database
-    restart: always
     volumes:
       - ./data-sys:/var/lib/mysql
       - ./conf-sys/my.cnf:/etc/my.cnf
@@ -11,6 +10,8 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     env_file:
       - ./.env
+    ports:
+      - "3306:3306"
       
   database-admin:
     image: phpmyadmin/phpmyadmin
