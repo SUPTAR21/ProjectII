@@ -4,7 +4,7 @@ services:
     image: ghcr.io/suptar21/projectii-database:master
     container_name: Studart-database
     networks:
-      - studart-network
+      - database_myproduct-network
     restart: always
     volumes:
       - ./data-sys:/var/lib/mysql
@@ -24,5 +24,6 @@ services:
       - 8081:80
       
 networks:
-  studart-network: 
- 
+  default:
+    external:
+      name: database_myproduct-network
