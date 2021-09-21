@@ -1,15 +1,11 @@
+
 version: '3'
 services:
   database:
-    image: ghcr.io/suptar21/projectii-database:master
+    image: mysql:5.7
     container_name: database
-    volumes:
-      - ./data-sys:/var/lib/mysql
-      - ./conf-sys/my.cnf:/etc/my.cnf
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    env_file:
-      - ./.env
+      MYSQL_ROOT_PASSWORD: Studart222
     ports:
       - "3306:3306"
       
@@ -25,4 +21,3 @@ services:
     restart: always
     ports:
       - 8081:80
-      
