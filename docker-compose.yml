@@ -1,17 +1,23 @@
 version: '3'
 services:
-  db:
-    image: mysql:5.7
-    container_name: db
+  database:
+    image: ghcr.io/suptar21/projectii-database:master
+    container_name: studart-database
     environment:
-      MYSQL_ROOT_PASSWORD: Studart222
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    env_file:
+      - ./.env
     ports:
       - "3306:3306"
-  phpmyadmin:
+    volumes:
+      - ./data-sys:/var/lib/mysql
+      - ./conf-sys/my.cnf:/etc/my.cnf
+      
+  database-admin:
     image: phpmyadmin/phpmyadmin
-    container_name: pma
+    container_name: studart-database-admin
     links:
-      - db
+      - database
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
@@ -19,4 +25,8 @@ services:
     restart: always
     ports:
       - 8081:80
+      
+ networks:
+  default:
+    name: studart-database-network
 
