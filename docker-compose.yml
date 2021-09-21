@@ -5,7 +5,9 @@ services:
     image: ghcr.io/suptar21/projectii-database:master
     container_name: database
     environment:
-      MYSQL_ROOT_PASSWORD: Studart222
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    env_file:
+      - ./.env
     ports:
       - "3306:3306"
       
