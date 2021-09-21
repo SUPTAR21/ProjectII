@@ -1,10 +1,8 @@
 version: '3'
 services:
-  db:
+  database:
     image: ghcr.io/suptar21/projectii-database:master
-    container_name: Studart-database
-    networks:
-      - database_myproduct-network
+    container_name: studart-database
     restart: always
     volumes:
       - ./data-sys:/var/lib/mysql
@@ -14,15 +12,16 @@ services:
     env_file:
       - ./.env
       
-  phpmyadmin:
+  database-admin:
     image: phpmyadmin/phpmyadmin
-    container_name: Studart-db-admin
-    links:
-      - db
+    container_name: studart-database-admin
     restart: always
+    links:
+      - database
     ports:
       - 8081:80
       
 networks:
   default:
-    name: database_myproduct-network
+    name: studart-database-network
+ 
