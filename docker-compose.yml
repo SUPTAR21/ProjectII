@@ -4,6 +4,9 @@ services:
   database:
     image: ghcr.io/suptar21/projectii-database:master
     container_name: database
+    volumes:
+      - ./data-sys:/var/lib/mysql
+      - ./conf-sys/my.cnf:/etc/my.cnf
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     env_file:
